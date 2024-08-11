@@ -3,8 +3,8 @@ version: "3.8"
 services:
 
   frontend:
-    container_name: frontend
-    hostname: frontend
+    container_name: desc_frontend
+    hostname: desc_frontend
     build: ./apps/Frontend/
     ports:
       - "3000:3000"
@@ -14,7 +14,7 @@ services:
       - mynet
 
   backend:
-    container_name: backend
+    container_name: desc_backend
     build: ./apps/Backend/
     expose:
       - "8000"
