@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  frontend:
+    container_name: frontend
+    hostname: frontend
+    build: ./apps/Frontend/
+    expose:
+      - "3000"
+    restart:
+      always
+    networks:
+      - mynet
+
+  backend:
+    container_name: backend
+    build: ./apps/Backend/
+    expose:
+      - "8000"
+    restart: always
+    networks:
+      - mynet
+
+
+
+
+
+networks:
+  mynet:
