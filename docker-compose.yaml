@@ -16,8 +16,8 @@ services:
   backend:
     container_name: desc_backend
     build: ./apps/Backend/
-    expose:
-      - "8000"
+    ports:
+      - "4000:4000"
     restart: always
     networks:
       - mynet
