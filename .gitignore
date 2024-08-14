@@ -1,3 +1,5 @@
 .idea
 .env
-#/apps
+
+/apps/Frontend/
+/apps/Backend/
