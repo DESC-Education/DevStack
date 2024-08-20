@@ -20,7 +20,7 @@ services:
       - "4000:4000"
     restart: always
     volumes:
-      - "./apps/Backend/mediafiles:/usr/src/mediafiles/verification_files"
+      - "./apps/Backend/mediafiles:/usr/src/mediafiles/"
     networks:
       - mynet
 
