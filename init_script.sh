@@ -6,6 +6,18 @@ SERVICES=("Frontend" "Backend" )
 # Определение пути к папке проекта
 PROJECT_DIR="apps"
 
+
+
+LOCKFILE="/tmp/init_script.lock"
+
+
+# Открываем файл для блокировки
+exec 200>"$LOCKFILE"
+
+# Устанавливаем блокировку на файл
+flock -x 200
+
+
 if [ ! -d "$PROJECT_DIR" ]; then
         mkdir "$PROJECT_DIR"
 fi
