@@ -37,7 +37,7 @@ scrape_configs:
       "DescBackend:4008",
       "DescBackend:4009",
       "DescBackend:4010",
-      "DescBackend:4011",
+#      "DescBackend:4011",
 #      "DescBackend:4012",
 #      "DescBackend:4013",
 #      "DescBackend:4014",
