@@ -14,7 +14,7 @@ services:
       - mynet
 
   backend:
-    container_name: desc_backend
+    container_name: DescBackend
     build: ./apps/Backend/
     ports:
       - "4000:4000"
@@ -50,6 +50,29 @@ services:
       retries: 5
       start_period: 10s
     restart: unless-stopped
+    networks:
+      - mynet
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    volumes:
+      - "./apps/prometheus/:/etc/prometheus/"
+      - "./apps/prometheus/data/:/prometheus/"
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - '9090:9090'
+    networks:
+      - mynet
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    volumes:
+      - "./apps/grafana/data/:/var/lib/grafana/"
+      - "./apps/grafana/:/etc/grafana/"
+    ports:
+      - '3060:3060'
     networks:
       - mynet
 

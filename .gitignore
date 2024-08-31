@@ -4,3 +4,5 @@
 /apps/Frontend/
 /apps/Backend/
 /apps/postgresql/postgresql-data/
+/apps/grafana/data/
+/apps/prometheus/data/
