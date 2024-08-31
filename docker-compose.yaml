@@ -77,20 +77,14 @@ services:
       - mynet
 
   node-exporter:
-    image: prom/node-exporter:latest
+    image: quay.io/prometheus/node-exporter:latest
     container_name: node-exporter
+    command:
+      - '--path.rootfs=/host'
+    pid: host
     restart: unless-stopped
     volumes:
-      - "./apps/node-exporter/proc:/host/proc/"
-      - "./apps/node-exporter/sys:/host/sys/"
-      - "./apps/node-exporter/:/rootfs/"
-    command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
-    expose:
-      - 9100
+      - '/:/host:ro,rslave'
     networks:
       - mynet
 
