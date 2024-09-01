@@ -2,8 +2,25 @@ version: "3.8"
 
 services:
 
+  nginx:
+      container_name: nginx
+      build: ./apps/nginx/
+      ports:
+        - "80:80"
+      depends_on:
+        - frontend
+        - backend
+        - grafana
+        - postgresql
+        - prometheus
+        - node-exporter
+      restart:
+        always
+      networks:
+        - mynet
+
   frontend:
-    container_name: desc_frontend
+    container_name: DescFrontend
     hostname: desc_frontend
     build: ./apps/Frontend/
     ports:
