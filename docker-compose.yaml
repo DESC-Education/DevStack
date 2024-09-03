@@ -151,6 +151,8 @@ services:
       timeout: 10s
       retries: 5
     restart: unless-stopped
+    networks:
+      - mynet
 #    tty: true
 #    stdin_open: true
 
