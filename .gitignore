@@ -6,3 +6,4 @@
 /apps/postgresql/postgresql-data/
 /apps/grafana/data/
 /apps/prometheus/data/
+/apps/redis/data/
