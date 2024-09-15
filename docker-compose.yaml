@@ -160,6 +160,16 @@ services:
     networks:
       - mynet
 
+  celery-exporter:
+    container_name: celery-exporter
+    image: danihodovic/celery-exporter
+    ports:
+      - "9808:9808"
+    command: --broker-url=redis://default:${REDIS_USER_PASSWORD}@redis:6379/0
+    networks:
+      - mynet
+
+
 
 networks:
   mynet:
