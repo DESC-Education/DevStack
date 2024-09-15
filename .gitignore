@@ -7,3 +7,7 @@
 /apps/grafana/data/
 /apps/prometheus/data/
 /apps/redis/data/
+/apps/nginx/ssl/ca.crt
+/apps/nginx/ssl/desc-education.ru.crt
+/apps/nginx/ssl/certificate_ca.crt
+/apps/nginx/ssl/desc-education.ru.key

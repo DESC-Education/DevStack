@@ -7,7 +7,11 @@ services:
       build: ./apps/nginx/
       volumes:
         - ./apps/nginx/ssl/:/etc/ssl/
+        - ./apps/Backend/mediafiles/:/home/mediafiles/
+        - ./apps/Backend/static/:/home/static/
+
       ports:
+        - "80:80"
         - "443:443"
       depends_on:
         - frontend
@@ -50,6 +54,7 @@ services:
     restart: always
     volumes:
       - "./apps/Backend/mediafiles:/usr/src/mediafiles/"
+      - "./apps/Backend/static:/usr/src/static/"
     networks:
       - mynet
 
