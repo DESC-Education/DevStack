@@ -29,7 +29,7 @@ services:
     container_name: nginx-exporter
     image: nginx/nginx-prometheus-exporter:1.3.0
     command:
-      - "--nginx.scrape-uri=http://nginx:80/stub_status"
+      - "--nginx.scrape-uri=https://nginx:443/stub_status"
     ports:
       - "9113:9113"
     networks:
@@ -55,6 +55,11 @@ services:
     volumes:
       - "./apps/Backend/mediafiles:/usr/src/mediafiles/"
       - "./apps/Backend/static:/usr/src/static/"
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:4000/api/prometheus/metrics"]
+#      interval: 10s
+#      timeout: 10s
+#      retries: 5
     networks:
       - mynet
 
