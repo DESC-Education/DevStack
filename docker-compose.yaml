@@ -63,6 +63,16 @@ services:
     networks:
       - mynet
 
+  backend_ws:
+    build:
+      dockerfile: Dockerfile_daphne
+      context: ./apps/Backend/
+    ports:
+        - "8000:8000"
+    restart: always
+    networks:
+      - mynet
+
   postgresql:
     image: postgres:16.1-alpine3.18
     container_name: desc_postgresql
