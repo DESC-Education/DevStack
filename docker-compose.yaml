@@ -67,6 +67,9 @@ services:
     build:
       dockerfile: Dockerfile_daphne
       context: ./apps/Backend/
+    volumes:
+      - "./apps/Backend/mediafiles:/usr/src/mediafiles/"
+      - "./apps/Backend/static:/usr/src/static/"
     ports:
         - "8000:8000"
     restart: always
