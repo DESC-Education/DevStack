@@ -63,19 +63,19 @@ services:
     networks:
       - mynet
 
-  backend_ws:
-    container_name: WSDescBackend
-    build:
-      dockerfile: Dockerfile_daphne
-      context: ./apps/Backend/
-    volumes:
-      - "./apps/Backend/mediafiles:/usr/src/mediafiles/"
-      - "./apps/Backend/static:/usr/src/static/"
-    ports:
-        - "8000:8000"
-    restart: always
-    networks:
-      - mynet
+#  backend_ws:
+#    container_name: WSDescBackend
+#    build:
+#      dockerfile: Dockerfile_daphne
+#      context: ./apps/Backend/
+#    volumes:
+#      - "./apps/Backend/mediafiles:/usr/src/mediafiles/"
+#      - "./apps/Backend/static:/usr/src/static/"
+#    ports:
+#        - "8000:8000"
+#    restart: always
+#    networks:
+#      - mynet
 
   postgresql:
     image: postgres:16.1-alpine3.18
