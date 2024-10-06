@@ -176,6 +176,9 @@ services:
     build:
       dockerfile: Dockerfile_celery
       context: ./apps/Backend/
+    volumes:
+      - "./apps/Backend/mediafiles:/usr/src/mediafiles/"
+      - "./apps/Backend/static:/usr/src/static/"
     networks:
       - mynet
 
