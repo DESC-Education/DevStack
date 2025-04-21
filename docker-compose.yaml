@@ -120,10 +120,11 @@ services:
       - mynet
   grafana:
     container_name: grafana
-    image: grafana/grafana:5.2.4
+    image: grafana/grafana:latest
     volumes:
       - "./apps/grafana/data/:/var/lib/grafana/"
       - "./apps/grafana/:/etc/grafana/"
+    user: "472"
     ports:
       - '3060:3060'
     networks:
