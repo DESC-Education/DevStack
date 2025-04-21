@@ -70,5 +70,5 @@ done
 # Запуск docker-compose
 
 
-echo "Запуск docker-compose up -d build"
+echo "Запуск docker compose up -d build"
 docker compose up -d --build
