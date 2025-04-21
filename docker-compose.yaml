@@ -120,7 +120,7 @@ services:
       - mynet
   grafana:
     container_name: grafana
-    image: grafana/grafana:latest
+    image: grafana/grafana:5.2.4
     volumes:
       - "./apps/grafana/data/:/var/lib/grafana/"
       - "./apps/grafana/:/etc/grafana/"
