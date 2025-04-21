@@ -124,7 +124,7 @@ services:
     volumes:
       - "./apps/grafana/data/:/var/lib/grafana/"
       - "./apps/grafana/:/etc/grafana/"
-    user: "472"
+    user: "$UID:$GID"
     ports:
       - '3060:3060'
     networks:
