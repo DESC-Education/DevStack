@@ -17,7 +17,7 @@ services:
         - frontend
         - backend
         - grafana
-        - postgresql
+        # - postgresql
         - prometheus
         - node-exporter
       restart:
